@@ -7,6 +7,9 @@ ruby "3.0.0"
 gem "rails", "~> 7.0.8"
 
 gem 'rack-cors'
+gem 'devise'
+gem 'devise-jwt'
+gem 'jsonapi-serializer'
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
