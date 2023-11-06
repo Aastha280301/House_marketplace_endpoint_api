@@ -35,6 +35,11 @@ class Api::V1::PropertiesController < ApplicationController
     head :no_content
   end
 
+  def search
+    @properties = Property.search(params)
+    render json: @properties
+  end
+
   private
 
   def property_params
