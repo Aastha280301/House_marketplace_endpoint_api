@@ -11,7 +11,7 @@ gem 'devise'
 gem 'devise-jwt'
 gem 'jsonapi-serializer'
 gem 'rolify'
-gem 'cancan'
+gem 'cancancan'
 gem 'pry'
 
 # Use postgresql as the database for Active Record

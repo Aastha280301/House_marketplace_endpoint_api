@@ -7,8 +7,6 @@ class Ability
       can :manage, Property
     else
       can :read, Property
-      can :add_to_favorites, Property
-      can :remove_from_favorites, Property
     end
     #
     # The first argument to `can` is the action you are giving the user 

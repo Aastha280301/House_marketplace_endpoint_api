@@ -1,5 +1,6 @@
 class Api::V1::PropertiesController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   def index
     @properties = Property.all
@@ -9,10 +10,12 @@ class Api::V1::PropertiesController < ApplicationController
   def show
     @property = Property.find(params[:id])
     render json: @property
+    authorize! :read, @property
   end
 
   def create
     @property = Property.new(property_params)
+    authorize! :create, @property
     if @property.save
       render json: @property, status: :created
     else
