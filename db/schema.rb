@@ -10,9 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_06_073516) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_06_080435) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "property_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_favorites_on_property_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string "city"
+    t.string "district"
+    t.integer "bedrooms"
+    t.decimal "rent"
+    t.string "mrt_line"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
@@ -47,4 +66,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_06_073516) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "favorites", "properties"
+  add_foreign_key "favorites", "users"
 end

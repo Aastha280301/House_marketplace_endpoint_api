@@ -7,6 +7,7 @@ class Ability
       can :manage, Property
     else
       can :read, Property
+      can :manage, Favorite
     end
     #
     # The first argument to `can` is the action you are giving the user 
