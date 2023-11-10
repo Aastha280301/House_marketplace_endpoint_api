@@ -12,6 +12,9 @@ gem 'devise-jwt'
 gem 'jsonapi-serializer'
 gem 'rolify'
 gem 'cancancan'
+gem 'nokogiri'
+gem 'httparty'
+gem 'byebug'
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"

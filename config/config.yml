@@ -1,0 +1,6 @@
+rent_range:
+  lower_bound: 30000
+  upper_bound: 100000
+city: [Taipei, New Taipei]
+districts: [District1, District2, District3]
+beds_upper_bound: 2
